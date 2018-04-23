@@ -91,4 +91,8 @@ app.use("/reviews", reviewsRoutes);
 const groupsRoutes = require("./routes/groups");
 app.use("/groups", groupsRoutes);
 
+const reportRoutes = require("./routes/report");
+app.use("/reports", reportsRoutes);
+
+
 module.exports = app;
