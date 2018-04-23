@@ -41,7 +41,7 @@ router.post("/new", (req, res) => {
 
 /* CRUD -> Update */
 router.get("/:id/edit", (req, res) => {
-  Plan.findById(req.params.id).then(Plan => {
+  Plan.findById(req.params.id).then(plan => {
     res.render("Plan_edit", { plan });
   });
 });
