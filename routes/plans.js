@@ -25,9 +25,9 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  const { title, description, creator, genre, assistants } = req.body;
+  const { title, description, creator, genre, assistants, date } = req.body;
 
-  const plan = new Plan({ title, description, creator, genre, assistants });
+  const plan = new Plan({ title, description, creator, genre, assistants, date  });
   plan
     .save()
     .then(plan => {
@@ -48,8 +48,8 @@ router.get("/:id/edit", (req, res) => {
 });
 
 router.post("/:id/edit", (req, res) => {
-  const { title, description, creator, genre, assistants } = req.body;
-  const updates = { title, description, creator, genre, assistants };
+  const { title, description, creator, genre, assistants, date } = req.body;
+  const updates = { title, description, creator, genre, assistants, date };
   Plan.findByIdAndUpdate(req.params.id, updates).then(() => {
     res.redirect("plans/plans");
   });
