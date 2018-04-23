@@ -42,12 +42,12 @@ router.post("/new", (req, res) => {
 /* CRUD -> Update */
 router.get("/:id/edit", (req, res) => {
   Plan.findById(req.params.id).then(plan => {
-    res.render("Plan_edit", { plan });
+    res.render("Plan-edit", { plan });
   });
 });
 
 router.post("/:id/edit", (req, res) => {
-  const { name, occupation, catch_phrase } = req.body;
+  const { title, description, creator, genre, assistants } = req.body;
   const updates = { title, description, creator, genre, assistants };
   Plan.findByIdAndUpdate(req.params.id, updates).then(() => {
     res.redirect("/plans/plans");
