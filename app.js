@@ -86,6 +86,9 @@ const index = require("./routes/index");
 app.use("/", index);
 
 const reviewsRoutes = require("./router/reviews");
-app.use("/reviews", reviews);
+app.use("/reviews", reviwsRoutes);
+
+const reviewsRoutes = require("./router/groups");
+app.use("/groups", reviews);
 
 module.exports = app;
