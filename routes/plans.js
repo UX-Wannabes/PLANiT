@@ -5,22 +5,65 @@ const debug = require("../log")(__filename);
 
 const Plan = require("../models/Plan");
 
-module.exports = router;
+/* CRUD -> Read */
+router.get("/", (req, res) => {
+  Plan.find()
+    .then(plans => {
+      res.render("/plans/plans", {
+        plans
+      });
+    })
+    .catch(() => {
+      res.render("/plans/plans");
+    });
+});
 
 /* CRUD -> Create */
 router.get("/new", (req, res) => {
   res.render("/plans/plans_new");
 });
 
-
-/* CRUD -> Read */
 router.post("/new", (req, res) => {
-  const { tittle, description, creator, genre, assistants } = req.body;
+  const { title, description, creator, genre, assistants } = req.body;
 
-  const plan = new plan({ tittle,description,creator,genre,assistants });
-  plan.save().then(plan => {
-    debug("Mistaken");
-    debug(plan);
-    res.render("/plans/plans");
+  const plan = new Plan({ title, description, creator, genre, assistants });
+  plan
+    .save()
+    .then(plan => {
+      debug("Mistaken");
+      debug(plan);
+      res.render("/plans/plans");
+    })
+    .catch(err => {
+      res.render("error", { err });
+    });
+});
+
+/* CRUD -> Update */
+router.get("/:id/edit", (req, res) => {
+  Plan.findById(req.params.id).then(Plan => {
+    res.render("Plan_edit", { plan });
   });
 });
+
+router.post("/:id/edit", (req, res) => {
+  const { name, occupation, catch_phrase } = req.body;
+  const updates = { title, description, creator, genre, assistants };
+  Plan.findByIdAndUpdate(req.params.id, updates).then(() => {
+    res.redirect("/plans/plans");
+  });
+});
+
+/* CRUD -> Delete */
+router.post("/:id/delete", (req, res) => {
+  Plan.findByIdAndRemove(req.params.id)
+    .then(() => {
+      debug("deleted");
+      res.redirect("/plans/plans");
+    })
+    .catch(err => {
+      debug(err);
+    });
+});
+
+module.exports = router;
