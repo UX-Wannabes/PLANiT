@@ -85,10 +85,10 @@ app.use('/plans', planRoutes);
 const index = require("./routes/index");
 app.use("/", index);
 
-const reviewsRoutes = require("./router/reviews");
+const reviewsRoutes = require("./routes/reviews");
 app.use("/reviews", reviewsRoutes);
 
-const groupsRoutes = require("./router/groups");
+const groupsRoutes = require("./routes/groups");
 app.use("/groups", groupsRoutes);
 
 module.exports = app;
