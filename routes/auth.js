@@ -60,7 +60,7 @@ authRoutes.post("/signup", (req, res, next) => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
-        sendAwesomeMail(email, {code: confirmationCode})
+        sendAwesomeMail(email, { code: confirmationCode })
           .then(() => {
             req.flash("info", "MENSAJE ENVIADO");
           })
