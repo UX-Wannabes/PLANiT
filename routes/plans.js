@@ -8,19 +8,20 @@ const Plan = require("../models/Plan");
 /* CRUD -> Read */
 router.get("/", (req, res) => {
   Plan.find()
+    .populate("creator", "username")
     .then(plans => {
-      res.render("/plans/plans", {
+      res.render("plans/plans", {
         plans
       });
     })
     .catch(() => {
-      res.render("/plans/plans");
+      res.render("plans/plans");
     });
 });
 
 /* CRUD -> Create */
 router.get("/new", (req, res) => {
-  res.render("/plans/plans_new");
+  res.render("plans/plans_new");
 });
 
 router.post("/new", (req, res) => {
@@ -32,7 +33,7 @@ router.post("/new", (req, res) => {
     .then(plan => {
       debug("Mistaken");
       debug(plan);
-      res.render("/plans/plans");
+      res.render("plans/plans");
     })
     .catch(err => {
       res.render("error", { err });
@@ -50,7 +51,7 @@ router.post("/:id/edit", (req, res) => {
   const { title, description, creator, genre, assistants } = req.body;
   const updates = { title, description, creator, genre, assistants };
   Plan.findByIdAndUpdate(req.params.id, updates).then(() => {
-    res.redirect("/plans/plans");
+    res.redirect("plans/plans");
   });
 });
 
@@ -59,7 +60,7 @@ router.post("/:id/delete", (req, res) => {
   Plan.findByIdAndRemove(req.params.id)
     .then(() => {
       debug("deleted");
-      res.redirect("/plans/plans");
+      res.redirect("plans/plans");
     })
     .catch(err => {
       debug(err);

@@ -1,0 +1,15 @@
+<div class="container">
+
+  {{#each plans}}
+  <div class="col-sm-4">
+    <h4>Plan: {{this.title}}</h4>
+    <p>Description: {{this.description}}</p>
+    <p>Creator: {{this.creator.username}}</p>
+    <p>Genre: {{this.genre}}</p>
+    <p>
+      <span class="fas fa-user"></span>
+
+      {{this.assistants.length}}</p>
+  </div>
+  {{/each}}
+</div>
