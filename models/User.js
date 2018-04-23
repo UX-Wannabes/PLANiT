@@ -3,7 +3,16 @@ const Schema   = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  password: String
+  password: String,
+  email: String,
+  birth: Date,
+  plansCreated: Number,
+  plansAssisted: Number,
+  stars: Number,
+  //friends
+  //groups
+  confirmationCode: String,
+  status: {type: Boolean, default: false}
 }, {
   timestamps: {
     createdAt: 'created_at',
