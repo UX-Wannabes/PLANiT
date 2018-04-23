@@ -1,23 +1,27 @@
 const express = require("express");
-const passport = require('passport');
+const passport = require("passport");
 const authRoutes = express.Router();
 const User = require("../models/User");
+const mongoose = require("mongoose");
+const sendAwesomeMail = require("../mail/sendMail");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
 authRoutes.get("/login", (req, res, next) => {
-  res.render("auth/login", { "message": req.flash("error") });
+  res.render("auth/login", { message: req.flash("error") });
 });
 
-authRoutes.post("/login", passport.authenticate("local", {
-  successRedirect: "/",
-  failureRedirect: "/auth/login",
-  failureFlash: true,
-  passReqToCallback: true
-}));
+authRoutes.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth/login",
+    failureFlash: true,
+    passReqToCallback: true
+  })
+);
 
 authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
@@ -26,7 +30,9 @@ authRoutes.get("/signup", (req, res, next) => {
 authRoutes.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
-  const rol = req.body.role;
+  const email = req.body.email;
+  const birth = req.body.birth;
+
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
     return;
@@ -40,17 +46,28 @@ authRoutes.post("/signup", (req, res, next) => {
 
     const salt = bcrypt.genSaltSync(bcryptSalt);
     const hashPass = bcrypt.hashSync(password, salt);
+    const confirmationCode = bcrypt.hashSync(username, salt);
 
     const newUser = new User({
       username,
       password: hashPass,
-      role:"teacher"
+      email,
+      birth,
+      confirmationCode
     });
 
-    newUser.save((err) => {
+    newUser.save(err => {
       if (err) {
         res.render("auth/signup", { message: "Something went wrong" });
       } else {
+        sendAwesomeMail(email, {code: confirmationCode})
+          .then(() => {
+            req.flash("info", "MENSAJE ENVIADO");
+          })
+          .catch(error => {
+            req.flash("info", "ERROR, NO SE HA PODIDO ENVIAR EL MENSAJE");
+            next(error);
+          });
         res.redirect("/");
       }
     });
@@ -62,4 +79,16 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
+authRoutes.get("/confirm/:confirmationCode", (req, res, next) => {
+  User.findOneAndUpdate(
+    { confirmationCode: req.params.confirmationCode },
+    { status: true }
+  )
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      res.render("error", { err });
+    });
+});
 module.exports = authRoutes;
