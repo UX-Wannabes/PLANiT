@@ -85,5 +85,7 @@ app.use('/plans', planRoutes);
 const index = require("./routes/index");
 app.use("/", index);
 
+const reviewsRoutes = require("./router/reviews");
+app.use("/reviews", reviews);
 
 module.exports = app;
