@@ -12,15 +12,6 @@ router.get("/", (req, res) => {
   }).then(plans => {
     res.render("plans/plans", { plans: JSON.stringify(plans) });
   });
-
-  // Plan.find()
-  // .count()
-  //   .then(plans => {
-  //     res.render("plans/plans", {plans:JSON.stringify(plans)});
-  //   })
-  //   .catch(() => {
-  //     res.render("plans/plans");
-  //   });
 });
 
 router.get("/outdoors", (req, res) => {
@@ -28,15 +19,43 @@ router.get("/outdoors", (req, res) => {
 });
 
 router.get("/outdoors/chill", (req, res) => {
-  res.render("plans/outdoors/chill");
+  Plan.find({ subgenre: "chill" })
+    .populate("creator", "username")
+    .then(plans => {
+      res.render("plans/outdoors/chill", { plans });
+    });
+});
+
+router.get("/outdoors/chill/:id", (req, res) => {
+  Plan.findById(req.params.id).then(plan => {
+    res.render("plans/outdoors/chill2", { plan });
+  });
 });
 
 router.get("/outdoors/nightlife", (req, res) => {
-  res.render("plans/outdoors/nightlife");
+  Plan.find({ subgenre: "nightlife" })
+    .populate("creator", "username")
+    .then(plans => {
+      res.render("plans/outdoors/nightlife", { plans });
+    });
+});
+router.get("/outdoors/nightlife/:id", (req, res) => {
+  Plan.findById(req.params.id).then(plan => {
+    res.render("plans/outdoors/nightlife2", { plan });
+  });
+});
+router.get("/outdoors/otherplans", (req, res) => {
+  Plan.find({ subgenre: "otherplans" })
+    .populate("creator", "username")
+    .then(plans => {
+      res.render("plans/outdoors/otherplans", { plans });
+    });
 });
 
-router.get("/outdoors/otherplans", (req, res) => {
-  res.render("plans/outdoors/otherplans");
+router.get("/outdoors/otherplans/:id", (req, res) => {
+  Plan.findById(req.params.id).then(plan => {
+    res.render("plans/outdoors/otherplans2", { plan });
+  });
 });
 
 router.get("/games", (req, res) => {
@@ -53,10 +72,10 @@ router.get("/games/online", (req, res) => {
 
 router.get("/movies", (req, res) => {
   Plan.find({ genre: "Movies" })
-  .populate('creator', 'username')
-  .then(movies => {
-    res.render("plans/movies/movies", { movies });
-  });
+    .populate("creator", "username")
+    .then(movies => {
+      res.render("plans/movies/movies", { movies });
+    });
 });
 
 /* CRUD -> Create */
