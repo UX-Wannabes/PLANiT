@@ -22,6 +22,14 @@ a {
     color: white;
     padding: 5px; }
 
+.navbar {
+  -webkit-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  background-color: #d73100; }
+  .navbar .nav-link {
+    color: white; }
+
 .overlay-shadow {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.3);
