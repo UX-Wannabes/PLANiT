@@ -7,14 +7,12 @@ const Plan = require("../models/Plan");
 
 /* CRUD -> Read */
 router.get("/", (req, res) => {
-  Plan.aggregate(
-    {
-      $group: { _id: "$genre", total: { $sum: 1 } }
-    })
-    .then((plans)=>{
-      res.render("plans/plans", {plans:JSON.stringify(plans)});
-    })
-  
+  Plan.aggregate({
+    $group: { _id: "$genre", total: { $sum: 1 } }
+  }).then(plans => {
+    res.render("plans/plans", { plans: JSON.stringify(plans) });
+  });
+
   // Plan.find()
   // .count()
   //   .then(plans => {
@@ -35,6 +33,14 @@ router.get("/games/board", (req, res) => {
 
 router.get("/games/online", (req, res) => {
   res.render("plans/games/online");
+});
+
+router.get("/movies", (req, res) => {
+  Plan.find({ genre: "Movies" })
+  .populate('creator', 'username')
+  .then(movies => {
+    res.render("plans/movies/movies", { movies });
+  });
 });
 
 /* CRUD -> Create */

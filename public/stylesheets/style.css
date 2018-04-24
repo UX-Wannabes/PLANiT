@@ -22,6 +22,43 @@ a {
     color: white;
     padding: 5px; }
 
+.overlay-shadow {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.plans-main {
+  z-index: 1;
+  background-image: url("../images/putaspopcorns.jpg");
+  background-size: cover; }
+  .plans-main h1 {
+    z-index: 3;
+    color: white;
+    margin-top: 50px; }
+
+.movies-partial {
+  margin: 30px;
+  flex-direction: column;
+  justify-content: center;
+  align-content: flex-start;
+  text-align: left;
+  padding: 20px;
+  color: white;
+  display: flex;
+  z-index: 3;
+  background-color: red;
+  border-radius: 15px;
+  height: 150px;
+  width: 250px;
+  -webkit-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75); }
+
 .column {
   box-sizing: border-box;
   align-self: center; }
@@ -79,12 +116,10 @@ svg {
 
 svg > a:first-child > path {
   cursor: pointer;
-  fill: #ccc; 
-}
+  fill: #ccc; }
 
 svg > a:last-child > path {
   cursor: pointer;
-  fill: #999; 
-}
+  fill: #999; }
 
 /*# sourceMappingURL=style.css.map */
