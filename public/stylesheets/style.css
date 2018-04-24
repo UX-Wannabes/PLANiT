@@ -79,10 +79,12 @@ svg {
 
 svg > a:first-child > path {
   cursor: pointer;
-  fill: #ccc; }
+  fill: #ccc; 
+}
 
 svg > a:last-child > path {
   cursor: pointer;
-  fill: #999; }
+  fill: #999; 
+}
 
 /*# sourceMappingURL=style.css.map */
