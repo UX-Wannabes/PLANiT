@@ -45,18 +45,17 @@ router.get("/movies", (req, res) => {
 
 /* CRUD -> Create */
 router.get("/new", (req, res) => {
-  res.render("plans/plans_new");
+  res.render("plans/newPlan");
 });
 
 router.post("/new", (req, res) => {
-  const { title, description, creator, genre, assistants, date } = req.body;
+  const { title, description, creator, genre, date } = req.body;
 
   const plan = new Plan({
     title,
     description,
     creator,
     genre,
-    assistants,
     date
   });
   plan
