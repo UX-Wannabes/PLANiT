@@ -120,9 +120,7 @@ svg > a:first-child > path {
 
 svg > a:last-child > path {
   cursor: pointer;
-  fill: #999; }
-<<<<<<< HEAD
-=======
+  fill: black; }
 
 .doors {
   height: 100vh;
@@ -138,6 +136,5 @@ svg > a:last-child > path {
 
 .b {
   margin-right: -1em; }
->>>>>>> a2bac1aa98bda3193d2940270bcbd3b8f7827122
 
 /*# sourceMappingURL=style.css.map */
