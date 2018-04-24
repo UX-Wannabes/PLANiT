@@ -51,6 +51,7 @@ router.get("/games/online", (req, res) => {
   res.render("plans/games/online");
 });
 
+
 router.get("/movies", (req, res) => {
   Plan.find({ genre: "Movies" })
   .populate('creator', 'username')

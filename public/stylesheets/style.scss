@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700");
-
+$background: #d73100;
 body {
   font: 14px "Merriweather Sans", Helvetica, Arial, sans-serif;
 }
@@ -27,6 +27,15 @@ a {
     padding: 5px;
   }
 }
+.navbar {
+  -webkit-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
+  background-color: $background;
+  .nav-link {
+    color: white;
+  }
+}
 .overlay-shadow {
   z-index: 2;
   background-color: rgba(0, 0, 0, 0.3);
@@ -47,7 +56,7 @@ a {
   background-image: url("../images/putaspopcorns.jpg");
   background-size: cover;
 }
-.movies-partial{
+.movies-partial {
   margin: 30px;
   flex-direction: column;
   justify-content: center;
@@ -64,7 +73,6 @@ a {
   -webkit-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
-
 }
 .column {
   box-sizing: border-box;
@@ -135,20 +143,20 @@ svg > a:last-child > path {
   fill: black;
 }
 
-.doors{
+.doors {
   height: 100vh;
   background-image: url("../images/3doors.png");
   background-repeat: no-repeat;
-  background-size:cover;
-  display:flex;
-  align-items:center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
   justify-content: space-around;
 }
 
-.a{
+.a {
   margin-left: 4em;
 }
 
-.b{
+.b {
   margin-right: -1em;
 }

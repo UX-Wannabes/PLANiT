@@ -91,4 +91,13 @@ authRoutes.get("/confirm/:confirmationCode", (req, res, next) => {
       res.render("error", { err });
     });
 });
+
+authRoutes.get("/profile", (req, res) => {
+  if (req.isAuthenticated()) {
+    let user = req.user;
+    res.render("auth/profile", { user });
+  } else {
+    res.redirect("auth/login");
+  }
+});
 module.exports = authRoutes;
