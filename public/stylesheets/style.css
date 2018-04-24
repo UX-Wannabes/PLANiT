@@ -121,5 +121,23 @@ svg > a:first-child > path {
 svg > a:last-child > path {
   cursor: pointer;
   fill: #999; }
+<<<<<<< HEAD
+=======
+
+.doors {
+  height: 100vh;
+  background-image: url("../images/3doors.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.a {
+  margin-left: 4em; }
+
+.b {
+  margin-right: -1em; }
+>>>>>>> a2bac1aa98bda3193d2940270bcbd3b8f7827122
 
 /*# sourceMappingURL=style.css.map */

@@ -134,3 +134,21 @@ svg > a:last-child > path {
   cursor: pointer;
   fill: #999;
 }
+
+.doors{
+  height: 100vh;
+  background-image: url("../images/3doors.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+}
+
+.a{
+  margin-left: 4em;
+}
+
+.b{
+  margin-right: -1em;
+}
