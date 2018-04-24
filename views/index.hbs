@@ -1,21 +1,39 @@
-{{!--
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<a href="/auth/login">Login</a>
-<a href="/auth/signup">Signup</a>
-<a href="/auth/logout">Logout</a> --}}
+<script src="javascripts/home.js"></script>
 
-<div class="container d-flex justify-content-center align-content-center main">
-  <div class="column col-sm-6">
-    <img src="images/logo2.png" alt="">
-    <h1>Planify</h1>
+<div class="wrapper">
+  <div class="container d-flex justify-content-center align-content-center main">
+    <div class="column col-sm-6">
+      <img src="images/logo2.png" alt="">
+      <div id="login" class="login-wrap">
+        <h2>Login</h2>
 
-    <a href="/auth/login">Login</a>    
-    <a href="/auth/signup">Signup</a>
+        <form action="/auth/login" method="POST" id="form-container">
+          <label for="username">Username</label>
+          <input id="username" type="text" name="username" placeholder="JonSnow">
+
+          <br>
+          <br>
+
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" placeholder="Your password">
+          <br> {{#if message }}
+          <div class="error-message">{{ message }}</div>
+          {{/if}}
+
+          <br>
+          <br>
+
+          <button>Login</button>
+      </div>
+      <h1>Planify</h1>
+
+      <a id="login-btn" href="#">Login</a>
+      <a href="/auth/signup">Signup</a>
+
+    </div>
+    <div class="links">
+
+    </div>
 
   </div>
-  <div class="links">
-
-  </div>
-
 </div>

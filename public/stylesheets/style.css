@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700");
 body {
-  font: 14px "Merriweather Sans", Helvetica, Arial, sans-serif;
-  background-color: #d73100; }
+  font: 14px "Merriweather Sans", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00b7ff; }
@@ -26,5 +25,42 @@ a {
 .column {
   box-sizing: border-box;
   align-self: center; }
+
+.wrapper {
+  background-color: #d73100; }
+
+.login-wrap {
+  height: 0;
+  display: none; }
+
+.login-unwrap {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: #d73100;
+  animation-name: login;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-box-shadow: inset 0px 0px 16px 1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px 0px 16px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 0px 16px 1px rgba(0, 0, 0, 0.75); }
+  .login-unwrap h1 form {
+    justify-self: center;
+    align-self: center; }
+
+.chart {
+  height: 500px;
+  width: 500px; }
+
+#myChart {
+  height: 100px;
+  width: 100px; }
+
+@keyframes login {
+  0% {
+    height: 0; }
+  100% {
+    height: 400px; } }
 
 /*# sourceMappingURL=style.css.map */

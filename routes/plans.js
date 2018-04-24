@@ -7,16 +7,22 @@ const Plan = require("../models/Plan");
 
 /* CRUD -> Read */
 router.get("/", (req, res) => {
-  Plan.find()
-    .populate("creator", "username")
-    .then(plans => {
-      res.render("plans/plans", {
-        plans
-      });
+  Plan.aggregate(
+    {
+      $group: { _id: "$genre", total: { $sum: 1 } }
     })
-    .catch(() => {
-      res.render("plans/plans");
-    });
+    .then((plans)=>{
+      res.render("plans/plans", {plans:JSON.stringify(plans)});
+    })
+  
+  // Plan.find()
+  // .count()
+  //   .then(plans => {
+  //     res.render("plans/plans", {plans:JSON.stringify(plans)});
+  //   })
+  //   .catch(() => {
+  //     res.render("plans/plans");
+  //   });
 });
 
 /* CRUD -> Create */
@@ -27,7 +33,14 @@ router.get("/new", (req, res) => {
 router.post("/new", (req, res) => {
   const { title, description, creator, genre, assistants, date } = req.body;
 
-  const plan = new Plan({ title, description, creator, genre, assistants, date  });
+  const plan = new Plan({
+    title,
+    description,
+    creator,
+    genre,
+    assistants,
+    date
+  });
   plan
     .save()
     .then(plan => {
