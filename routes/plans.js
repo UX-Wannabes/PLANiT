@@ -25,6 +25,22 @@ router.get("/", (req, res) => {
   //   });
 });
 
+router.get("/outdoors", (req, res) => {
+  res.render("plans/outdoors");
+});
+
+router.get("/outdoors/chill", (req, res) => {
+  res.render("plans/outdoors/chill");
+});
+
+router.get("/outdoors/nightlife", (req, res) => {
+  res.render("plans/outdoors/nightlife");
+});
+
+router.get("/outdoors/otherplans", (req, res) => {
+  res.render("plans/outdoors/otherplans");
+});
+
 router.get("/games", (req, res) => {
   res.render("plans/games");
 });
