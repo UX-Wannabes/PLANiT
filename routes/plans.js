@@ -19,6 +19,18 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/games", (req, res) => {
+  res.render("plans/games");
+});
+
+router.get("/games/board", (req, res) => {
+  res.render("plans/games/board");
+});
+
+router.get("/games/online", (req, res) => {
+  res.render("plans/games/online");
+});
+
 /* CRUD -> Create */
 router.get("/new", (req, res) => {
   res.render("plans/plans_new");
@@ -27,7 +39,14 @@ router.get("/new", (req, res) => {
 router.post("/new", (req, res) => {
   const { title, description, creator, genre, assistants, date } = req.body;
 
-  const plan = new Plan({ title, description, creator, genre, assistants, date  });
+  const plan = new Plan({
+    title,
+    description,
+    creator,
+    genre,
+    assistants,
+    date
+  });
   plan
     .save()
     .then(plan => {
