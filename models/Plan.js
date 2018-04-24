@@ -6,7 +6,7 @@ const planSchema = new Schema(
     title: String,
     description: String,
     creator: { type: Schema.Types.ObjectId, ref: "User" },
-    genre: String,
+    genre: {type: String, enum:['Movies', 'Outdoors', 'Games']},
     assistants: [{ type: Schema.Types.ObjectId, ref: "User" }],
     date: Date,
     hour: Date //hour de date ?

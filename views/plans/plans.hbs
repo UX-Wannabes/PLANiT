@@ -1,22 +1,15 @@
-{{!-- <div class="container column col-sm-6">
-
-  {{#each plans}}
-  <div class="col-sm-4">
-    <h4>Plan: {{this.title}}</h4>
-    <p>Description: {{this.description}}</p>
-    <p>Creator: {{this.creator.username}}</p>
-    <p>Genre: {{this.genre}}</p>
-    <p>
-      <span class="fas fa-user"></span>
-
-      {{this.assistants.length}}</p>
+<script>
+  window.plans = {{{ plans }}}
+</script>
+<div class="wrapper">
+  <div class="container justify-content-center align-content-center main">
+    <div class="chart">
+      <canvas id="myChart"></canvas>
+    </div>
+    <div class="container">
+      <a href="/plans/games">Games</a>
+      <a href="/plans/outdoors">Outdoors</a>
+      <a href="/plans/movies">Movies</a>
+    </div>
   </div>
-  {{/each}}
-</div> --}}
-<div class="container d-flex justify-content-center align-content-center main">
-  <div class="container">
-  <canvas id="myChart" height="500" width="500"></canvas>
 </div>
-
-</div>
-
