@@ -2,18 +2,6 @@
   <div class="container d-flex flex-column justify-content-center align-content-center main ">
 <div class="movies-partial">
         <h4>{{plan.title}}</h4>
-        <p>Creator: {{plan.creator.username}}</p>
-        <p>Description: {{plan.description}}</p>
-        <p><span class="fas fa-users"></span> {{plan.assistants.length}}</p>
-        <a href="/plans/outdoors/nightlife/{{plan.id}}/join"> Join </a>
-      </div>
-
-</div>
-
-<div class="wrapper">
-  <div class="container d-flex flex-column justify-content-center align-content-center main ">
-<div class="movies-partial">
-        <h4>{{plan.title}}</h4>
         <p>Creator: <a href="/plans/profile/{{plan.creator.id}}/">{{plan.creator.username}}</p>
         <p>Description: {{plan.description}}</p>
         <p>Date: {{plan.date}}</p>
@@ -24,7 +12,7 @@
             <li><a href="/plans/profile/{{this.id}}/">{{this.username}}</li>
           {{/each}}
         </ul>
-        <a href="/plans/outdoors/chill/{{plan.id}}/join"><button type="button" class="btn btn-danger">Join</button></a>
+        <a href="/plans/{{plan.genre}}/{{plan.subgenre}}/{{plan.id}}/join"><button type="button" class="btn btn-danger">Join</button></a>
       </div>
 
 </div>

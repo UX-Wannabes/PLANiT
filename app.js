@@ -51,6 +51,7 @@ app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 
+hbs.registerPartials(__dirname + '/views/plans/partials');
 hbs.registerHelper("ifUndefined", (value, options) => {
   if (arguments.length < 2)
     throw new Error("Handlebars Helper ifUndefined needs 1 parameter");
@@ -80,6 +81,7 @@ app.use((req,res,next) =>{
   res.locals.user = req.user;
   next();
 })
+
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
