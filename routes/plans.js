@@ -25,8 +25,8 @@ router.get("/new", (req, res) => {
 });
 
 router.post("/new", (req, res) => {
-  const { title, description, creator, genre, date } = req.body;
-  const address = req.body.location;
+  const { title, description, creator, genre, date, address} = req.body;
+  const address = req.body.address;
 
   googleMapsClient
     .geocode({ address })
@@ -99,7 +99,7 @@ router.get("/:genre/:subgenre", (req, res) => {
   Plan.find({ subgenre: req.params.subgenre })
     .populate("creator", "username")
     .then(plans => {
-      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plans });
+      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plans:JSON.stringify(plans)});
     });
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {

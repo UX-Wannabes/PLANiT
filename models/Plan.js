@@ -10,7 +10,8 @@ const planSchema = new Schema(
     subgenre: {type: String, default: 'movies'},
     assistants: [{ type: Schema.Types.ObjectId, ref: "User" }],
     date: Date,
-    hour: Date, //hour de date ?
+    hour: Date, 
+    address: String,
     location: { type: { type: String }, coordinates: [Number] }
   },
   {

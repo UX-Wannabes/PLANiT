@@ -108,6 +108,10 @@ a {
   height: 100px;
   width: 100px; }
 
+#map {
+  height: 400px;
+  width: 800px; }
+
 @keyframes loginFormUnwrap {
   0% {
     height: 0; }
