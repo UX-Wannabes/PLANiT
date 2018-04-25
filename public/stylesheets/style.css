@@ -135,11 +135,11 @@ svg {
 
 svg > a:first-child > path {
   cursor: pointer;
-  fill: #ccc; }
+  fill: white; }
 
 svg > a:last-child > path {
   cursor: pointer;
-  fill: black; }
+  fill: white; }
 
 .doors {
   height: 100vh;
