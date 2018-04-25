@@ -51,7 +51,7 @@ router.post("/new", (req, res) => {
         .then(plan => {
           debug("Mistaken");
           debug(plan);
-          res.render("plans/plans");
+          res.redirect("/plans");
         })
         .catch(err => {
           debug(err)
