@@ -4,12 +4,13 @@
     <h1>PLANS</h1>
     <div class="col-sm-8">
       {{#each plans}}
-      <a href="/plans/outdoors/otherplans/{{this.id}}"class="movies-partial">
+      <a href="/plans/outdoors/otherplans/{{this.id}}" class="movies-partial">
         <h4>{{this.title}}</h4>
         <p>Creator: {{this.creator.username}}</p>
-        <p><span class="fas fa-users"></span> {{this.assistants.length}}</p>
+        <p>
+          <span class="fas fa-users"></span> {{this.assistants.length}}</p>
       </a>
       {{/each}}
     </div>
   </div>
-</div> 
+</div>
