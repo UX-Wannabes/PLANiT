@@ -92,10 +92,27 @@ authRoutes.get("/confirm/:confirmationCode", (req, res, next) => {
     });
 });
 
+authRoutes.post("/editProfile", (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+  const salt = bcrypt.genSaltSync(bcryptSalt);
+  const hashPass = bcrypt.hashSync(password, salt);
+  const updated = {
+    username,
+    password: hashPass
+  };
+  User.findByIdAndUpdate(req.user.id, updated).then(user => {
+    res.redirect('/auth/profile');
+  });
+});
+
 authRoutes.get("/profile", (req, res) => {
   if (req.isAuthenticated()) {
-    let user = req.user;
-    res.render("auth/profile", { user });
+    let id = req.user.id;
+    User.findById(id)
+    .then(user =>{
+      res.render("auth/profile", { user });
+    });
   } else {
     res.redirect("auth/login");
   }

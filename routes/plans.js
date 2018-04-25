@@ -14,71 +14,6 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/outdoors", (req, res) => {
-  res.render("plans/outdoors");
-});
-
-router.get("/outdoors/chill", (req, res) => {
-  Plan.find({ subgenre: "chill" })
-    .populate("creator", "username")
-    .then(plans => {
-      res.render("plans/outdoors/chill", { plans });
-    });
-});
-
-router.get("/outdoors/chill/:id", (req, res) => {
-  Plan.findById(req.params.id).then(plan => {
-    res.render("plans/outdoors/chill2", { plan });
-  });
-});
-
-router.get("/outdoors/nightlife", (req, res) => {
-  Plan.find({ subgenre: "nightlife" })
-    .populate("creator", "username")
-    .then(plans => {
-      res.render("plans/outdoors/nightlife", { plans });
-    });
-});
-router.get("/outdoors/nightlife/:id", (req, res) => {
-  Plan.findById(req.params.id).then(plan => {
-    res.render("plans/outdoors/nightlife2", { plan });
-  });
-});
-router.get("/outdoors/otherplans", (req, res) => {
-  Plan.find({ subgenre: "otherplans" })
-    .populate("creator", "username")
-    .then(plans => {
-      res.render("plans/outdoors/otherplans", { plans });
-    });
-});
-
-router.get("/outdoors/otherplans/:id", (req, res) => {
-  Plan.findById(req.params.id).then(plan => {
-    res.render("plans/outdoors/otherplans2", { plan });
-  });
-});
-
-router.get("/games", (req, res) => {
-  res.render("plans/games");
-});
-
-router.get("/games/board", (req, res) => {
-  res.render("plans/games/board");
-});
-
-router.get("/games/online", (req, res) => {
-  res.render("plans/games/online");
-});
-
-
-router.get("/movies", (req, res) => {
-  Plan.find({ genre: "Movies" })
-    .populate("creator", "username")
-    .then(movies => {
-      res.render("plans/movies/movies", { movies });
-    });
-});
-
 /* CRUD -> Create */
 router.get("/new", (req, res) => {
   res.render("plans/newPlan");
@@ -131,6 +66,34 @@ router.post("/:id/delete", (req, res) => {
     .catch(err => {
       debug(err);
     });
+});
+
+router.get("/:genre", (req, res) => {
+  res.render(`/plans/${req.params.genre}`);
+});
+router.get("/:genre/:subgenre", (req, res) => {
+  res.render(`/plans/${req.params.genre}/${req.params.subgenre}`);
+  Plan.find({ subgenre: req.params.subgenre })
+    .populate("creator", "username")
+    .then(plans => {
+      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plans });
+    });
+});
+router.get("/:genre/:subgenre/:id", (req, res) => {
+  Plan.findById(req.params.id).then(plan => {
+    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
+      plan
+    });
+  });
+});
+router.get("/:genre/:subgenre/:id/join", (req, res) => {
+  Plan.findByIdAndUpdate(req.params.id, {
+    $push: { assistants: req.user.id }
+  }).then(() => {
+    Plan.findById(req.params.id).then(plan => {
+      res.redirect(`/plans/${plan.subgenre}/${plan.id}`);
+    });
+  });
 });
 
 module.exports = router;

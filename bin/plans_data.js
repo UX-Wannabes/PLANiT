@@ -25,6 +25,7 @@ module.exports = [
     description: "Quedamos en mi casa para jugar a un juego de mesa super guachi",
     creator: "5addf03f2ae0d74d4d170a43",
     genre: "Games",
+    subgenre: "Board",
     assistants: [
       "5addcee3b8e47e3e878993d0"
     ]

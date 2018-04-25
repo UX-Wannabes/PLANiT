@@ -1,39 +1,44 @@
 <div class="wrapper">
-  <div class="container d-flex justify-content-center align-content-center main">
-    <br><br>
-    <form action="/plans/new" method="POST">
-      <div class="form-group">
-        <label for="title">Title:</label>
-        <input name="title" type="text" class="form-control" id="title" placeholder="Planazo to flama">
-      </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Description:</label>
-        <textarea name="description" rows="3" class="form-control" id="description" placeholder="Planazo to flama description"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="date">Date:</label>
-        <input name="date" type="date" class="form-control" id="date">
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="genre" id="genre1" value="Movies" checked>
-        <label class="form-check-label" for="genre1">
-          Movies
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="genre" id="genre2" value="Outdoors">
-        <label class="form-check-label" for="genre2">
-          Outdoors
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="genre" id="genre3" value="Games">
-        <label class="form-check-label" for="genre3">
-          Games
-        </label>
-      </div> <br><br>
-      <button class="btn btn-danger"type="submit">Create Plan</button>
-    </form>
+  <div class="container d-flex justify-content-center align-items-center main">
+    <br>
+    <br>
+    <div class="row">
+      <form action="/plans/new" method="POST">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input name="title" type="text" class="form-control" id="title" placeholder="Planazo to flama">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Description:</label>
+          <textarea name="description" rows="3" class="form-control" id="description" placeholder="Planazo to flama description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input name="date" type="date" class="form-control" id="date">
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="genre" id="genre1" value="Movies" checked>
+          <label class="form-check-label" for="genre1">
+            Movies
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="genre" id="genre2" value="Outdoors">
+          <label class="form-check-label" for="genre2">
+            Outdoors
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="genre" id="genre3" value="Games">
+          <label class="form-check-label" for="genre3">
+            Games
+          </label>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-danger" type="submit">Create Plan</button>
+      </form>
+    </div>
 
   </div>
 </div>

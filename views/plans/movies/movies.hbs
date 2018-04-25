@@ -1,7 +1,7 @@
 <div class="wrapper">
-  <div class="overlay-shadow">
-  </div>
-  <div class="container d-flex flex-column justify-content-center align-content-center main plans-main">
+  {{!-- <div class="overlay-shadow">
+  </div> --}}
+  <div class="container d-flex flex-column justify-content-center align-content-center main ">
     <h1>MOVIES</h1>
     <div class="movies col-sm-8">
       {{#each movies}}
@@ -9,6 +9,7 @@
         <h4>{{this.title}}</h4>
         <p>Creator: {{this.creator.username}}</p>
         <p><span class="fas fa-users"></span> {{this.assistants.length}}</p>
+        <a href="/plans/movies/{{this.id}}"> See more </a>
       </div>
       {{/each}}
     </div>
