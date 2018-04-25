@@ -1,9 +1,14 @@
 const express = require("express");
+require("dotenv").config();
 
 const router = express.Router();
 const debug = require("../log")(__filename);
 
 const Plan = require("../models/Plan");
+const googleMapsClient = require("@google/maps").createClient({
+  key: process.env.GOOGLEKEY,
+  Promise: Promise
+});
 
 /* CRUD -> Read */
 router.get("/", (req, res) => {
@@ -21,23 +26,42 @@ router.get("/new", (req, res) => {
 
 router.post("/new", (req, res) => {
   const { title, description, creator, genre, date } = req.body;
+  const address = req.body.location;
 
-  const plan = new Plan({
-    title,
-    description,
-    creator,
-    genre,
-    date
-  });
-  plan
-    .save()
-    .then(plan => {
-      debug("Mistaken");
-      debug(plan);
-      res.render("plans/plans");
+  googleMapsClient
+    .geocode({ address })
+    .asPromise()
+    .then(response => {
+      console.log(response.json.results[0].geometry.location);
+      const loc = response.json.results[0].geometry.location;
+      let location = {
+        type: "Point",
+        coordinates: [loc.lat, loc.lng]
+      };
+      const plan = new Plan({
+        title,
+        description,
+        creator,
+        genre,
+        date,
+        location
+      });
+      plan
+        .save()
+        .then(plan => {
+          debug("Mistaken");
+          debug(plan);
+          res.render("plans/plans");
+        })
+        .catch(err => {
+          debug(err)
+          res.render("error", { err });
+        });
+      
     })
     .catch(err => {
-      res.render("error", { err });
+      debug("not funsiona 1")
+      console.log(err);
     });
 });
 
@@ -80,7 +104,9 @@ router.get("/:genre/:subgenre", (req, res) => {
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
   Plan.findById(req.params.id).then(plan => {
-    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {plan});
+    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
+      plan
+    });
   });
 });
 router.get("/:genre/:subgenre/:id/join", (req, res) => {
