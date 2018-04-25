@@ -44,6 +44,7 @@ router.post("/new", (req, res) => {
         creator,
         genre,
         date,
+        address,
         location
       });
       plan

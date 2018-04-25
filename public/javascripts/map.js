@@ -31,7 +31,7 @@ window.onload = () => {
   changedUse.forEach(plan => {
     let infowindow = new google.maps.InfoWindow({
       content: `<h3>${plan.title}</h3>
-      <p>date:${plan.date}</p>
+      <p>${plan.date}</p>
       <a href="/plans/${plan.genre}/${plan.subgenre}/${plan.id}">Go to plan</a>`
     });
 

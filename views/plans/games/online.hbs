@@ -1,15 +1,23 @@
-<div class="wrapper">
+<script>
+  window.plans = {{{plans}}};
+</script>
 
+<div class="wrapper">
+  {{!-- <div class="overlay-shadow">
+  </div> --}}
   <div class="container d-flex flex-column justify-content-center align-content-center main ">
-    <h1>PLANS</h1>
-    <div class="col-sm-8">
+    <h1>MOVIES</h1>
+
+    <div id="map"></div>
+    {{!-- <div class="movies col-sm-8">
       {{#each plans}}
-      <a href="/plans/games/online/{{this.id}}"class="movies-partial">
+      <div class="movies-partial">
         <h4>{{this.title}}</h4>
         <p>Creator: {{this.creator.username}}</p>
         <p><span class="fas fa-users"></span> {{this.assistants.length}}</p>
-      </a>
+        <a href="/plans/movies/movies/{{this.id}}"> See more </a>
+      </div>
       {{/each}}
-    </div>
+    </div> --}}
   </div>
 </div> 
