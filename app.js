@@ -63,6 +63,7 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 
 // default value for title local
 app.locals.title = "Planify - Move around";
+app.locals.user = "";
 
 // Enable authentication using session + passport
 app.use(

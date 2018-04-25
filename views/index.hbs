@@ -4,10 +4,12 @@
   <div class="container d-flex justify-content-center align-content-center main">
     <div class="column col-sm-6">
       <img src="images/logo2.png" alt="">
+
+      <h1>Planify</h1>
       <div id="login" class="login-wrap">
         <h2>Login</h2>
 
-        <form action="/auth/login" method="POST" id="form-container">
+        <form class="login-form-appear" action="/auth/login" method="POST" id="form-container">
           <label for="username">Username</label>
           <input id="username" type="text" name="username" placeholder="JonSnow">
 
@@ -25,8 +27,6 @@
 
           <button>Login</button>
       </div>
-      <h1>Planify</h1>
-
       <a id="login-btn" class="btn btn-danger" href="#">Login</a>
       <a href="/auth/signup" class="btn btn-danger">Signup</a>
 
