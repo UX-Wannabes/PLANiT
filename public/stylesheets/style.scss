@@ -140,24 +140,6 @@ a {
 .games {
   margin: 0;
 }
-.triangle {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-svg > a:first-child > path {
-  cursor: pointer;
-  fill: white;
-}
-svg > a:last-child > path {
-  cursor: pointer;
-  fill: white;
-}
 
 .doors {
   height: 100vh;
@@ -175,4 +157,15 @@ svg > a:last-child > path {
 
 .b {
   margin-right: -1em;
+}
+
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  img {
+    height: 100vh;
+    width: 100%;
+  }
 }
