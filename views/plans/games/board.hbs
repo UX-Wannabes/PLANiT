@@ -1,5 +1,15 @@
-<body>
-  <div class= "container" >
-    <img src="">
+<div class="wrapper">
+
+  <div class="container d-flex flex-column justify-content-center align-content-center main ">
+    <h1>PLANS</h1>
+    <div class="col-sm-8">
+      {{#each plans}}
+      <a href="/plans/outdoors/chill/{{this.id}}"class="movies-partial">
+        <h4>{{this.title}}</h4>
+        <p>Creator: {{this.creator.username}}</p>
+        <p><span class="fas fa-users"></span> {{this.assistants.length}}</p>
+      </a>
+      {{/each}}
+    </div>
   </div>
-</body>
+</div> 

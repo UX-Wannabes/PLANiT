@@ -220,5 +220,23 @@ module.exports = [
     assistants: [
       "5addcee3b8e47e3e878993d0"
     ]
+  },
+  {
+    title:"Salir de fiesta por un pueblo cercano",
+    description:"nos vamos de fiesta al pueblo de mi primo Paco",
+    creator: "5addf03f2ae0d74d4d170a43",
+    genre: "outdoors",
+    subgenre: "nightlife",
+    assistants:[
+      "5addcee3b8e47e3e878993d0"]
+  },
+  {
+    title:"Ir al parque de atraccion el viernes por la tarde",
+    description:"raul y sus amigos se van al parque de atracciones",
+    creator: "5addf03f2ae0d74d4d170a43",
+    genre: "outdoors",
+    subgenre: "otherplans",
+    assistants:[
+      "5addcee3b8e47e3e878993d0"]
   }
 ]
