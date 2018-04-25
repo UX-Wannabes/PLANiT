@@ -63,7 +63,6 @@ hbs.registerHelper("ifUndefined", (value, options) => {
 
 // default value for title local
 app.locals.title = "Planify - Move around";
-app.locals.user = "";
 
 // Enable authentication using session + passport
 app.use(
@@ -76,6 +75,11 @@ app.use(
 );
 app.use(flash());
 require("./passport")(app);
+
+app.use((req,res,next) =>{
+  res.locals.user = req.user;
+  next();
+})
 
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
