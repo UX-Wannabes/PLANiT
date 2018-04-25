@@ -99,7 +99,7 @@ router.get("/:genre/:subgenre", (req, res) => {
   Plan.find({ subgenre: req.params.subgenre })
     .populate("creator", "username")
     .then(plans => {
-      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plans:JSON.stringify(plans)});
+      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plansMap:JSON.stringify(plans), plans});
     });
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
