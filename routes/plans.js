@@ -69,10 +69,9 @@ router.post("/:id/delete", (req, res) => {
 });
 
 router.get("/:genre", (req, res) => {
-  res.render(`/plans/${req.params.genre}`);
+  res.render(`plans/${req.params.genre}`);
 });
 router.get("/:genre/:subgenre", (req, res) => {
-  res.render(`/plans/${req.params.genre}/${req.params.subgenre}`);
   Plan.find({ subgenre: req.params.subgenre })
     .populate("creator", "username")
     .then(plans => {
@@ -81,9 +80,7 @@ router.get("/:genre/:subgenre", (req, res) => {
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
   Plan.findById(req.params.id).then(plan => {
-    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
-      plan
-    });
+    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {plan});
   });
 });
 router.get("/:genre/:subgenre/:id/join", (req, res) => {
@@ -91,7 +88,7 @@ router.get("/:genre/:subgenre/:id/join", (req, res) => {
     $push: { assistants: req.user.id }
   }).then(() => {
     Plan.findById(req.params.id).then(plan => {
-      res.redirect(`/plans/${plan.subgenre}/${plan.id}`);
+      res.redirect(`/plans/${plan.genre}/${plan.subgenre}/${plan.id}`);
     });
   });
 });
