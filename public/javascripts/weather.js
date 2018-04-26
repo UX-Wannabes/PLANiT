@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded",() => {
       let long = response.data.results[0].geometry.location.lng;
       axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=a68b6bdea8f65c2b91544b4501750026`).then(w=>{
         console.log(w)
-        document.getElementById("raul").innerHTML+=`<p>${w.data.list[0].weather[0].main}</p> <img src="http://openweathermap.org/img/w/${w.data.list[0].weather[0].icon}.png">`
+        document.getElementById("raul").innerHTML=`<p>Weather for that date: ${w.data.list[0].weather[0].main}</p> <img style="height: 100px"src="http://openweathermap.org/img/w/${w.data.list[0].weather[0].icon}.png">`
       })
     })
     .catch(function (error) {
