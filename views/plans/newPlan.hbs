@@ -10,17 +10,20 @@
           <label for="exampleFormControlSelect1">Description:</label>
           <textarea name="description" rows="3" class="form-control" id="description" placeholder="Planazo to flama description"></textarea>
         </div>
-        <div class="form-group">
-          <label for="date">Date:</label>
-          <input name="date" type="date" class="form-control" id="date">
+        <div class="form-check">
+          <label class="form-check-label" for="address">
+            Address
+          </label>
+          <input name="address" type="text" class="form-control" id="adress" placeholder="El muro 78 Madrid">
         </div>
+
         <div class="form-check">
           <input class="form-check-input" type="radio" name="genre" id="genre1" value="movies" checked>
           <label class="form-check-label" for="genre1">
             Movies
           </label>
         </div>
-        <div id ="outdoors-list" class="form-check">
+        <div id="outdoors-list" class="form-check">
           <input class="form-check-input" type="radio" name="genre" id="outdoors" value="outdoors">
           <label class="form-check-label" for="outdoors">
             Outdoors
@@ -34,18 +37,22 @@
         </div>
         <br>
         <br>
-        <div class="form-check">
-          <label class="form-check-label" for="address">
-            Address
-          </label>
-          <input name="address" type="text" class="form-control" id="adress" placeholder="El muro 78 Madrid">
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input name="date" type="date" class="form-control" id="date">
         </div>
         <br>
         <br>
+        <div class="form-group">
+          <label for="date">Time:</label>
+          <input name="hour" type="time" class="form-control" id="hour">
+        </div>
+        <br><br>
         <button class="btn btn-danger" type="submit">Create Plan</button>
       </form>
     </div>
-    {{!-- <div class="col-sm-2" id="raul">
+    {{!--
+    <div class="col-sm-2" id="raul">
       <div class="col-sm-3" id="raul1"></div>
       <div class="col-sm-3" id="raul2"></div>
       <div class="col-sm-3" id="raul3"></div>

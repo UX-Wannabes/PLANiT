@@ -26,7 +26,7 @@ router.get("/new", (req, res) => {
 
 router.post("/new", (req, res) => {
   const creator = req.user;
-  const { title, description, genre, subgenre, date, address} = req.body;
+  const { title, description, genre, subgenre, date, address, hour } = req.body;
   // const address = req.body.address;
   googleMapsClient
     .geocode({ address })
@@ -45,6 +45,7 @@ router.post("/new", (req, res) => {
         genre,
         subgenre,
         date,
+        hour,
         address,
         location
       });
@@ -58,13 +59,12 @@ router.post("/new", (req, res) => {
           res.redirect("/plans");
         })
         .catch(err => {
-          debug(err)
+          debug(err);
           res.render("error", { err });
         });
-      
     })
     .catch(err => {
-      debug("not funsiona 1")
+      debug("not funsiona 1");
       console.log(err);
     });
 });
@@ -103,19 +103,24 @@ router.get("/:genre/:subgenre", (req, res) => {
   Plan.find({ subgenre: req.params.subgenre })
     .populate("creator", "username")
     .then(plans => {
-      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, { plansMap:JSON.stringify(plans), plans});
+      res.render(`plans/${req.params.genre}/${req.params.subgenre}`, {
+        plansMap: JSON.stringify(plans),
+        plans
+      });
     });
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
   Plan.findById(req.params.id)
-  .populate('creator')
-  .populate('assistants')
-  .then(plan => {
-    console.log(plan)
-    res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
-      plan
+    .populate("creator")
+    .populate("assistants")
+    .then(plan => {
+      let date = plan.date.toLocaleDateString("es-ES");
+
+      res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
+        plan: plan,
+        date: date
+      });
     });
-  });
 });
 router.get("/:genre/:subgenre/:id/join", (req, res) => {
   Plan.findByIdAndUpdate(req.params.id, {
