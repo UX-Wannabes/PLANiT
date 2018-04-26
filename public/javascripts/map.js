@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lat: 43.392513,
         lng: -3.698211
       },
-      zoom: 15
+      zoom: 10
     });
 
     //Marks

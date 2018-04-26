@@ -1,14 +1,19 @@
 module.exports = [
   {
     title: "Picnic en el parque de Raúl",
-    description: "Pues eso jaja xd salu2",
+    description: "Me apetece darme una vuelta por el parque, ¿alguien se viene?",
     creator: "5addcee3b8e47e3e878993d0",
     genre: "outdoors",
     subgenre: "chill",
     assistants: [
       "5addcee3b8e47e3e878993d0",
       "5addf03f2ae0d74d4d170a43"
-    ]
+    ],
+    location: {
+      lat: 40.416471,
+      lon: -3.695383
+    },
+    address: "Cortes Madrid"
   },
   {
     title: "Concierto de Le Marc",
