@@ -1,5 +1,8 @@
-window.onload = () => {
+
+  document.addEventListener("DOMContentLoaded", () => {
+
   if (document.getElementById("map")) {
+    console.log("mapita");
     const map = new google.maps.Map(document.getElementById("map"), {
       center: {
         lat: 43.392513,
@@ -81,4 +84,4 @@ window.onload = () => {
       );
     }
   }
-};
+});
