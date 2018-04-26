@@ -6,7 +6,10 @@ a {
   color: #00b7ff; }
 
 #raul {
-  margin-top: 150px; }
+  margin-top: 100px; }
+
+.newplan {
+  padding-top: 15%; }
 
 .main {
   background-color: white;
@@ -15,8 +18,7 @@ a {
   box-shadow: 0px 0px 83px 10px rgba(0, 0, 0, 0.75);
   height: 100vh;
   text-align: center;
-  color: grey;
-  justify-content: center; }
+  color: grey; }
   .main h1 {
     font-weight: 700; }
   .main img {
@@ -116,6 +118,7 @@ a {
   width: 100px; }
 
 #map {
+  margin: 0 auto;
   height: 400px;
   width: 800px; }
 
