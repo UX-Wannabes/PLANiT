@@ -13,7 +13,8 @@ const userSchema = new Schema(
     friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
     groups: [{ type: Schema.Types.ObjectId, ref: "Group" }],
     confirmationCode: String,
-    status: { type: Boolean, default: false }
+    status: { type: Boolean, default: false },
+    profilePic: String
   },
   {
     timestamps: {

@@ -4,6 +4,9 @@ const authRoutes = express.Router();
 const User = require("../models/User");
 const mongoose = require("mongoose");
 const sendAwesomeMail = require("../mail/sendMail");
+const multer  = require('multer');
+const upload = multer({ dest: './public/uploads/' });
+
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
@@ -27,11 +30,12 @@ authRoutes.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-authRoutes.post("/signup", (req, res, next) => {
+authRoutes.post("/signup", upload.single('photo'), (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
   const birth = req.body.birth;
+  const profilePic = `/uploads/${req.file.filename}`;
 
   if (username === "" || password === "") {
     res.render("auth/signup", { message: "Indicate username and password" });
@@ -53,7 +57,8 @@ authRoutes.post("/signup", (req, res, next) => {
       password: hashPass,
       email,
       birth,
-      confirmationCode
+      confirmationCode,
+      profilePic
     });
 
     newUser.save(err => {
