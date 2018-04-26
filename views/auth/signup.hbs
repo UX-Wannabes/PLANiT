@@ -36,8 +36,13 @@
       <a href="/auth/login">Login</a>
     </p>
     </form> --}}
+<<<<<<< HEAD
+    <h2 class="titul">Signup</h2>
+    <form>
+=======
     <h2>Signup</h2>
     <form action="/auth/signup" method="POST" enctype="multipart/form-data">
+>>>>>>> 6ccb94e63a0c3e7803ab78e231e5dbe8c0677118
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -63,8 +68,10 @@
         <small id="fileHelp" class="form-text text-muted"></small>
       </div>
       <fieldset class="form-group">
-
         <button type="submit" class="btn btn-primary">Sign Up</button>
+        <small id="AboutyouHelp" class="form-text text-muted">Do you already have an account?
+          <a id="link" href="/auth/login">Login</a>
+        </small>
     </form>
   </div>
 </div>
