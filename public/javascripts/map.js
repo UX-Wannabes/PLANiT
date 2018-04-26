@@ -1,6 +1,4 @@
-
-  document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("map")) {
     console.log("mapita");
     const map = new google.maps.Map(document.getElementById("map"), {

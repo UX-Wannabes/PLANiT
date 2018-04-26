@@ -105,8 +105,10 @@ router.get("/:genre/:subgenre", (req, res) => {
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
   Plan.findById(req.params.id)
-  .populate('creator', 'username')
+  .populate('creator')
+  .populate('assistants')
   .then(plan => {
+    console.log(plan)
     res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
       plan
     });
