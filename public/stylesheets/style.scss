@@ -173,3 +173,19 @@ a {
   }
 }
 
+.flexy{
+  display:flex;
+  flex-direction:row-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .move{
+   margin-left:15em;
+  }
+
+  .container d-flex{
+    background-image: url("/images/diagonal_bn.jpg");
+    width:cover;
+    height:100%;
+  }
+}
