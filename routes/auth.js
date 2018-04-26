@@ -111,6 +111,12 @@ authRoutes.post("/editProfile", (req, res) => {
   });
 });
 
+authRoutes.get("/addStar/:id", (req, res) => {
+  User.findByIdAndUpdate(req.params.id, {$inc: {stars: 1}}, {new:true}).then(user => {
+    console.log("added");
+  });
+});
+
 authRoutes.get("/profile", (req, res) => {
   if (req.isAuthenticated()) {
     let id = req.user.id;
