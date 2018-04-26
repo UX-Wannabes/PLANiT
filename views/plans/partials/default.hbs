@@ -10,7 +10,7 @@
         <p>Assistants <span class="fas fa-users"></span> {{plan.assistants.length}}</p>
         <ul>
           {{#each plan.assistants}}
-            <li><a href="/profile/{{this.id}}/">{{this.username}}</li>
+            <li><a href="/profile/{{this.id}}/">{{this.username}}</a></li>
           {{/each}}
         </ul>
         <a href="/plans/{{plan.genre}}/{{plan.subgenre}}/{{plan.id}}/join"><button type="button" class="btn btn-danger">Join</button></a>
