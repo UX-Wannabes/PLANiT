@@ -12,7 +12,7 @@ a {
   color: goldenrod; }
 
 .newplan {
-  padding-top: 15%; }
+  padding-top: 5%; }
 
 .main {
   background-color: white;
@@ -85,6 +85,7 @@ a {
 
 .login-unwrap {
   display: flex;
+  margin-bottom: 10px;
   overflow: hidden;
   flex-direction: column;
   align-content: center;
@@ -123,7 +124,7 @@ a {
 #map {
   margin: 0 auto;
   height: 400px;
-  width: 800px; }
+  width: 80%; }
 
 @keyframes loginFormUnwrap {
   0% {

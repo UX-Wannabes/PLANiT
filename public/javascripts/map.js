@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       zoom: 10
     });
-
+    console.log(window.plans);
     //Marks
     let bounds = new google.maps.LatLngBounds();
     let changedUse = window.plans.map(plan => {

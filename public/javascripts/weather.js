@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("outdoors").onchange = () => {
       document.getElementById("outdoors-list").innerHTML += `
       <br><br>
-      <select class="custom-select">
+      <select name="subgenre" class="custom-select">
   <option selected>Subgenre</option>
   <option value="chill">Chill</option>
   <option value="nightlife">Nightlife</option>
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("games").onchange = () => {
       document.getElementById("games-list").innerHTML += `
       <br><br>
-      <select class="custom-select">
+      <select name="subgenre" class="custom-select">
   <option selected>Subgenre</option>
   <option value="board">Board</option>
   <option value="online">Online</option>

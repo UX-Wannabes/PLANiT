@@ -1,4 +1,5 @@
 module.exports = [
+  
   {
     title: "Picnic en el parque de Raúl",
     description: "Me apetece darme una vuelta por el parque, ¿alguien se viene?",

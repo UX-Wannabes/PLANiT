@@ -6,7 +6,7 @@ const pathToHtmlEmailTemplate = path.join(
   "./mail_templates/welcome_mail.html"
 );
 
-const sendAwesomeMail = (to, variables, from = "Planify") => {
+const sendAwesomeMail = (to, variables, from = "PLANiT") => {
   return mjmlUtils
     .inject(pathToHtmlEmailTemplate, variables)
     .then(finalTemplate => {
@@ -14,8 +14,8 @@ const sendAwesomeMail = (to, variables, from = "Planify") => {
         .sendMail({
           from: `"testingemailnano@gmail.com <${from}>`,
           to,
-          subject: "Welcome to Planify", // Asunto
-          html: `localhost:3000/auth/confirm/${variables.code}`
+          subject: "Welcome to PLANiT", // Asunto
+          html: `https://planit-ironhack.herokuapp.com/auth/confirm/${variables.code}`
         })
         .then(info => console.log(info));
     });
