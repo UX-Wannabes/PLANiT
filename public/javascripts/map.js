@@ -31,10 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
     map.fitBounds(bounds);
 
     changedUse.forEach(plan => {
+      console.log(plan.date);
       let infowindow = new google.maps.InfoWindow({
         content: `<h3>${plan.title}</h3>
-      <p>${plan.date}</p>
-      <a href="/plans/${plan.genre}/${plan.subgenre}/${plan.id}">Go to plan</a>`
+      <p>${plan.date.split("T")[0]}</p>
+      <a class="btn btn-warning" href="/plans/${plan.genre}/${plan.subgenre}/${plan.id}">Go to plan</a>`
       });
 
       let marker = new google.maps.Marker({

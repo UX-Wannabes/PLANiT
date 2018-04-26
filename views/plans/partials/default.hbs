@@ -2,7 +2,7 @@
   <div class="container d-flex flex-column justify-content-center align-content-center main ">
 <div class="movies-partial">
         <h4>{{plan.title}}</h4>
-        <p>Creator: <a href="/profile/{{plan.creator.id}}/"></a>{{plan.creator.username}}</p>
+        <p>Creator: <a href="/profile/{{plan.creator.id}}/">{{plan.creator.username}}</a></p>
         <p>Description: {{plan.description}}</p>
         <p>Date: {{plan.date}}</p>
         <p>Hour {{plan.hour}}</p>
@@ -13,7 +13,7 @@
             <li><a href="/profile/{{this.id}}/">{{this.username}}</a></li>
           {{/each}}
         </ul>
-        <a href="/plans/{{plan.genre}}/{{plan.subgenre}}/{{plan.id}}/join"><button type="button" class="btn btn-danger">Join</button></a>
+        <a href="/plans/{{plan.genre}}/{{plan.subgenre}}/{{plan.id}}/join">Join</a>
       </div>
 
 </div>
