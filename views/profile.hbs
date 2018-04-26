@@ -2,9 +2,8 @@
     <div class="container d-flex flex-column align-content-center main newplan">
         <img src="{{user.profilePic}}" style="height: 100px; width: 100px; margin: 0 auto" alt="">
         <h3>{{user.username}}</h3>
-        <input type="hidden" name="userid" value="{{user.id}}">
         <h4>
-            <a href="/auth/addStar/{{user.id}}" id="star-rating" class="far fa-star"></a>{{user.stars}}</h4>
+            <a href="{{user.id}}" id="star-rating" class="far fa-star"></a><span id="number-beltran">{{user.stars}}</span></h4>
         <p>Plans assisted to: {{user.plansAssisted}}</p>
         <p>Plans created: {{user.plansCreated}}</p>
     </div>

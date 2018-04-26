@@ -30,9 +30,14 @@ document.addEventListener(
     }
     if(document.getElementById("star-rating")){
       document.getElementById("star-rating").onclick = (e)=>{
-        e.preventDefault();
-        let id = document.getElementById("userid").value;
-        axios.post(`auth/addStar/${id}`);
+        e.preventDefault();        
+        let numberBeltranix = parseInt(document.getElementById("number-beltran").textContent)+1;
+          console.log(numberBeltranix);
+          document.getElementById("number-beltran").textContent = numberBeltranix;
+          
+        let id = document.getElementById("star-rating").getAttribute('href');
+        axios.get(`/auth/addStar/${id}`);
+
       }
     }
   },

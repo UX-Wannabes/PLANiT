@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         id: plan._id,
         date: plan.date,
+        hour: plan.hour,
         genre: plan.genre,
         subgenre: plan.subgenre
       };
@@ -31,10 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
     map.fitBounds(bounds);
 
     changedUse.forEach(plan => {
-      console.log(plan.date);
+      console.log(plan);
+      console.log(plan.hour);
       let infowindow = new google.maps.InfoWindow({
         content: `<h3>${plan.title}</h3>
       <p>${plan.date.split("T")[0]}</p>
+      <p>${plan.hour}</p>
       <a class="btn btn-warning" href="/plans/${plan.genre}/${plan.subgenre}/${plan.id}">Go to plan</a>`
       });
 
