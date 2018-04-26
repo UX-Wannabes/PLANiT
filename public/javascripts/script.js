@@ -1,7 +1,7 @@
 document.addEventListener(
   "DOMContentLoaded",
   () => {
-    if (window.plans) {
+    if (document.getElementById("myChart")) {
       const labels = window.plans.map(e => e._id);
       const data = window.plans.map(e => e.total);
       var ctx = document.getElementById("myChart").getContext("2d");
