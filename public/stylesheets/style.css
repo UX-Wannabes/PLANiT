@@ -176,4 +176,10 @@ a {
 #link {
   color: blue; }
 
+#otro {
+  font-family: 'Press Start 2P', cursive;
+  color: #0f9758;
+  padding-bottom: 1.25em;
+  font-size: 100px; }
+
 /*# sourceMappingURL=style.css.map */
