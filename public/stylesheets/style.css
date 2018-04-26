@@ -2,11 +2,19 @@
 body {
   font: 14px "Merriweather Sans", Helvetica, Arial, sans-serif; }
 
+.newform {
+  width: 40%; }
+
+.weather {
+  position: relative;
+  height: 150px;
+  width: 500px; }
+
 a {
   color: #00b7ff; }
 
 #raul {
-  margin-top: 100px; }
+  margin-top: 20px; }
 
 #star-rating {
   color: goldenrod; }

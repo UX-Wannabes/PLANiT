@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
               console.log(w);
               document.getElementById(
                 "raul"
-              ).innerHTML = `<p>Weather for that date: ${
+              ).innerHTML = `<p>Weather for today: ${
                 w.data.list[0].weather[0].main
               }</p> <img style="height: 100px"src="http://openweathermap.org/img/w/${
                 w.data.list[0].weather[0].icon
