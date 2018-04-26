@@ -1,23 +1,26 @@
 <script>
-  window.plans = {{{plans}}};
+    window.plans = {{{ plansMap }}} 
 </script>
 
 <div class="wrapper">
-  {{!-- <div class="overlay-shadow">
+  {{!--
+  <div class="overlay-shadow">
   </div> --}}
   <div class="container d-flex flex-column justify-content-center align-content-center main ">
     <h1>CHILL</h1>
 
     <div id="map"></div>
-    {{!-- <div class="movies col-sm-8">
+    {{!--
+    <div class="movies col-sm-8">
       {{#each plans}}
       <div class="movies-partial">
         <h4>{{this.title}}</h4>
         <p>Creator: {{this.creator.username}}</p>
-        <p><span class="fas fa-users"></span> {{this.assistants.length}}</p>
+        <p>
+          <span class="fas fa-users"></span> {{this.assistants.length}}</p>
         <a href="/plans/movies/movies/{{this.id}}"> See more </a>
       </div>
       {{/each}}
     </div> --}}
   </div>
-</div> 
+</div>

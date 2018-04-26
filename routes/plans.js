@@ -26,7 +26,7 @@ router.get("/new", (req, res) => {
 
 router.post("/new", (req, res) => {
   const creator = req.user;
-  const { title, description, genre, date, address} = req.body;
+  const { title, description, genre, subgenre, date, address} = req.body;
   // const address = req.body.address;
   googleMapsClient
     .geocode({ address })
@@ -43,6 +43,7 @@ router.post("/new", (req, res) => {
         description,
         creator,
         genre,
+        subgenre,
         date,
         address,
         location
@@ -52,6 +53,8 @@ router.post("/new", (req, res) => {
         .then(plan => {
           debug("Mistaken");
           debug(plan);
+          req.user.plansCreated++;
+          req.user.save();
           res.redirect("/plans");
         })
         .catch(err => {
@@ -119,6 +122,8 @@ router.get("/:genre/:subgenre/:id/join", (req, res) => {
     $push: { assistants: req.user.id }
   }).then(() => {
     Plan.findById(req.params.id).then(plan => {
+      req.user.plansAssisted++;
+      req.user.save();
       res.redirect(`/plans/${plan.genre}/${plan.subgenre}/${plan.id}`);
     });
   });

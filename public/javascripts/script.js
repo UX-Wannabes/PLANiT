@@ -12,11 +12,11 @@ document.addEventListener(
           datasets: [
             {
               data: data,
-              backgroundColor: ["#FF463B", "#F0FF54", "#1B76CC"],
+              backgroundColor: ["#FF463B", "orange", "#1B76CC"],
               borderColor: [
-                "rgba(255,99,132,1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)"
+                "white",
+                "white",
+                "white"
               ],
               borderWidth: 1
             }
