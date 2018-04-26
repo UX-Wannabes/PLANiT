@@ -122,6 +122,8 @@ router.get("/:genre/:subgenre/:id/join", (req, res) => {
     $push: { assistants: req.user.id }
   }).then(() => {
     Plan.findById(req.params.id).then(plan => {
+      req.user.plansAssisted++;
+      req.user.save();
       res.redirect(`/plans/${plan.genre}/${plan.subgenre}/${plan.id}`);
     });
   });
