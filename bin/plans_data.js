@@ -1,248 +1,50 @@
 module.exports = [
-  
   {
-    title: "Picnic en el parque de Raúl",
-    description: "Me apetece darme una vuelta por el parque, ¿alguien se viene?",
-    creator: "5addcee3b8e47e3e878993d0",
-    genre: "outdoors",
-    subgenre: "chill",
-    assistants: [
-      "5addcee3b8e47e3e878993d0",
-      "5addf03f2ae0d74d4d170a43"
-    ],
-    location: {
-      lat: 40.416471,
-      lon: -3.695383
-    },
-    address: "Cortes Madrid"
+    _id: "5ae23fca2f8fb9efccff6dc9",
+    updated_at: "2018-04-26T21:08:54.953Z",
+    created_at: "2018-04-26T21:08:26.308Z",
+    title: "La nueva de avengers",
+    description: "Vamos todos juntos a ver esta hermosa pelicula",
+    creator: "5ae23f7c2f8fb9efccff6dc8",
+    genre: "movies",
+    date: "2018-04-26T00:00:00.000Z",
+    hour: "20:30",
+    address: "Calle serrano 23",
+    location: { type: "Point", coordinates: [40.426345, -3.687924799999999] },
+    assistants: ["5ae23f7c2f8fb9efccff6dc8"],
+    subgenre: "movies",
+    __v: 0
   },
   {
-    title: "Concierto de Le Marc",
-    description: "Conciertazo por la noche flipas pipas",
-    creator: "5addf13cbe49e84df7b15fb4",
+    _id: "5ae241abaec6d3f3cf2ad761",
+    updated_at: "2018-04-26T21:16:38.694Z",
+    created_at: "2018-04-26T21:16:27.117Z",
+    title: "pescar",
+    description: "alli",
+    creator: "5ae23f7c2f8fb9efccff6dc8",
     genre: "outdoors",
+    date: "2018-04-26T00:00:00.000Z",
+    hour: "10:30",
+    address: "calle serrano 40",
+    location: { type: "Point", coordinates: [40.4260776, -3.6874] },
+    assistants: ["5ae23f7c2f8fb9efccff6dc8"],
     subgenre: "chill",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
+    __v: 0
   },
   {
-    title: "Juego de mesa super guay",
-    description: "Quedamos en mi casa para jugar a un juego de mesa super guachi",
-    creator: "5addf03f2ae0d74d4d170a43",
+    _id: "5ae24699291ffbf6096d070d",
+    updated_at: "2018-04-26T21:37:29.992Z",
+    created_at: "2018-04-26T21:37:29.992Z",
+    title: "Partida de dragones y mazmorras",
+    description: "Vamos a jugar al dragones y mazmorras, ¿alguien se apunta?",
+    creator: "5ae23f7c2f8fb9efccff6dc8",
     genre: "games",
+    date: "2018-04-27T00:00:00.000Z",
+    hour: "19:00",
+    address: "calle fernandez de la hoz 20",
+    location: { type: "Point", coordinates: [40.4315565, -3.694997399999999] },
+    assistants: [],
     subgenre: "board",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Café con Don Victor el Mago",
-    description: "Vamos a tomar un café con Victor",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "outdoors",
-    subgenre: "otherplans",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Kill Bill",
-    description: "Vamos al cine a ver Kill Bill Revolution porque me aburro jaja",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Pokémon El reencuentro",
-    description: "Quedamos para ver la mejor peli de pokémon yeah y quien diga que no es tonto",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",    
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Partida de Dragones y Mazmorras",
-    description: "Quedamos para jugar al mejor juego de rol",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "online",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Rankeds al counter",
-    description: "Agregadme a steam para echar unas rankeds mi nombre es jandror2",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "online",    
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Picnic en el parque de Raúl",
-    description: "Pues eso jaja xd salu2",
-    creator: "5addcee3b8e47e3e878993d0",
-    genre: "outdoors",
-    subgenre: "chill",
-    assistants: [
-      "5addcee3b8e47e3e878993d0",
-      "5addf03f2ae0d74d4d170a43"
-    ]
-  },
-  {
-    title: "Concierto de Le Marc",
-    description: "Conciertazo por la noche flipas pipas",
-    creator: "5addf13cbe49e84df7b15fb4",
-    genre: "outdoors",
-    subgenre: "nightlife",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Juego de mesa super guay",
-    description: "Quedamos en mi casa para jugar a un juego de mesa super guachi",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "board",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Café con Don Victor el Mago",
-    description: "Vamos a tomar un café con Victor",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "outdoors",
-    subgenre: "nightlife",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Kill Bill",
-    description: "Vamos al cine a ver Kill Bill Revolution porque me aburro jaja",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Pokémon El reencuentro",
-    description: "Quedamos para ver la mejor peli de pokémon yeah y quien diga que no es tonto",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Partida de Dragones y Mazmorras",
-    description: "Quedamos para jugar al mejor juego de rol",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "board",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Rankeds al counter",
-    description: "Agregadme a steam para echar unas rankeds mi nombre es jandror2",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "online",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },{
-    title: "Picnic en el parque de Raúl",
-    description: "Pues eso jaja xd salu2",
-    creator: "5addcee3b8e47e3e878993d0",
-    genre: "outdoors",
-    subgenre: "chill",
-    assistants: [
-      "5addcee3b8e47e3e878993d0",
-      "5addf03f2ae0d74d4d170a43"
-    ]
-  },
-  {
-    title: "Concierto de Le Marc",
-    description: "Conciertazo por la noche flipas pipas",
-    creator: "5addf13cbe49e84df7b15fb4",
-    genre: "outdoors",
-    subgenre: "nightlife",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Juego de mesa super guay",
-    description: "Quedamos en mi casa para jugar a un juego de mesa super guachi",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "games",
-    subgenre: "board",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Café con Don Victor el Mago",
-    description: "Vamos a tomar un café con Victor",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "outdoors",
-    subgenre: "chill",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Kill Bill",
-    description: "Vamos al cine a ver Kill Bill Revolution porque me aburro jaja",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title: "Peli: Pokémon El reencuentro",
-    description: "Quedamos para ver la mejor peli de pokémon yeah y quien diga que no es tonto",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "movies",
-    subgenre: "movies",
-    assistants: [
-      "5addcee3b8e47e3e878993d0"
-    ]
-  },
-  {
-    title:"Salir de fiesta por un pueblo cercano",
-    description:"nos vamos de fiesta al pueblo de mi primo Paco",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "outdoors",
-    subgenre: "nightlife",
-    assistants:[
-      "5addcee3b8e47e3e878993d0"]
-  },
-  {
-    title:"Ir al parque de atraccion el viernes por la tarde",
-    description:"raul y sus amigos se van al parque de atracciones",
-    creator: "5addf03f2ae0d74d4d170a43",
-    genre: "outdoors",
-    subgenre: "otherplans",
-    assistants:[
-      "5addcee3b8e47e3e878993d0"]
+    __v: 0
   }
-]
+];
