@@ -2,7 +2,7 @@
   <div class="container d-flex flex-column justify-content-center align-items-center main">
     <br>
     <br>
-    <div class="row">
+    <div class="col-sm-8">
       <form action="/plans/new" method="POST">
         <div class="form-group">
           <label for="title">Title:</label>
@@ -22,15 +22,15 @@
             Movies
           </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="genre" id="genre2" value="outdoors">
-          <label class="form-check-label" for="genre2">
+        <div id ="outdoors-list" class="form-check">
+          <input class="form-check-input" type="radio" name="genre" id="outdoors" value="outdoors">
+          <label class="form-check-label" for="outdoors">
             Outdoors
           </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="genre" id="genre3" value="games">
-          <label class="form-check-label" for="genre3">
+        <div id="games-list" class="form-check">
+          <input class="form-check-input" type="radio" name="genre" id="games" value="games">
+          <label class="form-check-label" for="games">
             Games
           </label>
         </div>

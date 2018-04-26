@@ -30,5 +30,31 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(error);
         });
     };
+    document.getElementById("outdoors").onchange = () => {
+      document.getElementById("outdoors-list").innerHTML += `
+      <input class="form-check-input" type="radio" name="subgenre" value="chill">
+      <label class="form-check-label" for="outdoors">
+        Chill
+      </label>
+      <input class="form-check-input" type="radio" name="subgenre" value="nightlife">
+      <label class="form-check-label" for="outdoors">
+        Nightlife
+      </label>
+      <input class="form-check-input" type="radio" name="subgenre" value="otherplans">
+      <label class="form-check-label" for="outdoors">
+        Other plans
+      </label>`;
+    };
+    document.getElementById("games").onchange = () => {
+      document.getElementById("games-list").innerHTML += `
+      <input type="radio" name="subgenre" value="board">
+      <label class="form-check-label" for="outdoors">
+        Board
+      </label>
+      <input class="form-check-input" type="radio" name="subgenre" value="online">
+      <label class="form-check-label" for="outdoors">
+        Online
+      </label>`;
+    };
   }
 });

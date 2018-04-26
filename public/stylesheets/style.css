@@ -80,7 +80,7 @@ a {
   flex-direction: column;
   align-content: center;
   background-color: #d73100;
-  animation-name: login;
+  animation-name: loginFormAppear;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -92,10 +92,13 @@ a {
     align-self: center; }
 
 .login-form-appear {
-  animation-name: login-form-appear;
+  animation-name: loginFormAppear;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards; }
+
+#outdoors-list input {
+  padding: 30px; }
 
 .chart {
   height: 500px;
