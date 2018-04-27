@@ -1,19 +1,77 @@
+<style>
+  #messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #messages li {
+    padding: 5px 10px;
+  }
+
+  #messages li:nth-child(odd) {
+    background: #101010;
+  }
+
+  #messages {
+    margin-bottom: 40px;
+    width: 70%;
+  }
+</style>
+
 <div class="wrapper">
-  <div class="container d-flex flex-column justify-content-center align-content-center main ">
-<div class="movies-partial">
+  <div class="container main full-height">
+    <div class="movies-partial row">
+      <div class="col-sm-4">
         <h4>{{plan.title}}</h4>
-        <p>Creator: <a href="/profile/{{plan.creator.id}}/">{{plan.creator.username}}</a></p>
+        <p>Creator:
+          <a href="/profile/{{plan.creator.id}}/">{{plan.creator.username}}</a>
+        </p>
         <p>Description: {{plan.description}}</p>
         <p>Date: {{date}}</p>
         <p>Hour {{plan.hour}}</p>
         <p>Address: {{plan.address}}</p>
-        <p>Assistants <span class="fas fa-users"></span> {{plan.assistants.length}}</p>
+        <p>Assistants
+          <span class="fas fa-users"></span> {{plan.assistants.length}}</p>
         <ul>
           {{#each plan.assistants}}
-            <li><a href="/profile/{{this.id}}/">{{this.username}}</a></li>
+          <li>
+            <a href="/profile/{{this.id}}/">{{this.username}}</a>
+          </li>
           {{/each}}
         </ul>
         <a href="/plans/{{plan.genre}}/{{plan.subgenre}}/{{plan.id}}/join">Join</a>
       </div>
+      <div class="col-sm-4">
+        <div class="chat">
+          <ul id="messages"></ul>
+          <form action="">
+            <input id="m" autocomplete="off" />
+            <button>Send</button>
+          </form>
+        </div>
 
-</div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src = "/socket.io/socket.io.js"></script>
+
+  <script>
+    $(function () {
+      var socket = io();
+      console.log("hoal");
+      $('form').submit(function () {
+        console.log("emitido");
+        socket.emit('chat', '{{{user.username}}}: '+ $('#m').val());
+        $('#m').val('');
+        return false;
+      });
+      socket.on('chat', function (msg) {
+        console.log("recibido");
+        $('#messages').append($('<li>').text(`${msg}`));
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    });
+  </script>

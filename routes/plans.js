@@ -110,6 +110,7 @@ router.get("/:genre/:subgenre", (req, res) => {
     });
 });
 router.get("/:genre/:subgenre/:id", (req, res) => {
+  let user = req.user;
   Plan.findById(req.params.id)
     .populate("creator")
     .populate("assistants")
@@ -118,7 +119,8 @@ router.get("/:genre/:subgenre/:id", (req, res) => {
 
       res.render(`plans/${req.params.genre}/${req.params.subgenre}-detail`, {
         plan: plan,
-        date: date
+        date: date,
+        user, user
       });
     });
 });
